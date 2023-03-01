@@ -1,0 +1,43 @@
+ /* 
+
+    //BRUTEFORCE
+
+    set<int> st;
+   
+    for(int i=0;i<nums.size();i++){
+
+        st.insert(nums[i]);
+    }
+    nums.clear();
+    int n=st.size();
+    for(auto it:st){
+
+        nums.push_back(it);
+    }
+    return n;
+
+    
+
+    //OPTIMAL 
+    
+    APPROACH -
+    AS ARRAY WAS SORTED SO ALL DUPLICATES MUST BE CLUSTERED TOGETHER SO WE CAN USE TWO POINTER TO SKIP DUPLICATE ELEMENTS ONE POINTER FOR REFERENCE(THAT IS FOR FIXED CHECK) AND OTHER POINTER CAN BE USED FOR TRAVERSING
+    int n=nums.size();
+    if(n==0){
+        return 0;
+    }
+    int i=0;
+    for(int j=1;j<n;j++){
+
+        if(nums[i]!=nums[j]){
+            i++;
+            nums[i]=nums[j];
+        }
+    }
+    return i+1;
+   
+    
+        
+    }
+
+    */
